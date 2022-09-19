@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") -%>
+
+<% posts.forEach(function(element) { %>
+  <form class="" action="/delete" method="post">
+ <input type="checkbox" name="checkBox" value="<%= element._id %>" onChange="this.form.submit()">
+  <span>On checking this item will deletede !!!!! </span>
+  <h1> <%= element.title %> </h1>
+  <p> <%= element.content %><span> <a href="/posts/<%= element.title %>">Read More</a> </span> </p>
+  </form>
+
+  <% });%>
+ <br> <br>
+      <button style:"background-color:lightgrey" type="button" name="button"><span ><a href="/compose">New blog</a></span></button>
+<%- include("partials/footer.ejs") -%>
